@@ -1,36 +1,38 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import logo from '../../assets/1741534887310.png'
-import search from '../../assets/search1.png'
-import {link} from 'react-router-dom'
-const Navbar = () =>{
+import React, { useState } from "react";
+import "./Navbar.css";
+import logo from "../../assets/1741534887310.png";
+import search from "../../assets/search1.png";
+import { Link } from "react-router-dom";
 
-const [menu,setMeu] = useState("shop");
+const Navbar = () => {
+  const [menu, setMenu] = useState("shop");
 
-return (
-  <div className ='navbar'>
-    <img src={logo} alt="" className='logo'/>
+  return (
+    <div className="navbar">
+      <img src={logo} alt="" className="logo" />
 
-    <ul>
-    <li>
-      <link to='/home' >Home</link>
-    </li>
-        <li> <link to='/craftitems' >Craft Items</link></li>
-        <li><link to='/Jewels' >Jewels</link></li>
-    </ul>
+      <ul>
+        <li>
+          <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/craftitems">Craft Items</Link>
+        </li>
+        <li>
+          <Link to="/Jewels">Jewels</Link>
+        </li>
+      </ul>
 
-    <div className='Login'>
+      <div className="Login">
         <button>Login</button>
+      </div>
+
+      <div className="search-box">
+        <input type="text" placeholder="search" />
+        <img src={search} alt="" className="search" />
+      </div>
     </div>
+  );
+};
 
-    <div className='search-box'>
-        <input type="text" placeholder='search'/>
-        <img src={search} alt="" className='search'/>
-    </div>
-
-
-  </div>
-)
-}
-
-export default Navbar
+export default Navbar;
